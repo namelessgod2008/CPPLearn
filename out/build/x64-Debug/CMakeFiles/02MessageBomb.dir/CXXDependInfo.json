@@ -1,0 +1,27 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "D:/Programs/CPPLearn/out/build/x64-Debug",
+	"dir-cur-src" : "D:/Programs/CPPLearn",
+	"dir-top-bld" : "D:/Programs/CPPLearn/out/build/x64-Debug",
+	"dir-top-src" : "D:/Programs/CPPLearn",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "D:/Programs/CPPLearn/out/build/x64-Debug/CMakeFiles/02MessageBomb.dir",
+	"sources" : 
+	{
+		"CMakeFiles/02MessageBomb.dir/src/02MessageBomb.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "D:/Programs/CPPLearn/src/02MessageBomb.cpp"
+		}
+	}
+}

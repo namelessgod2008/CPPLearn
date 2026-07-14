@@ -1,0 +1,10 @@
+# ninja log v7
+3	59	8056476126965896	D:/Programs/CPPLearn/out/build/x64-Debug/CMakeFiles/cmake.verify_globs	981de6b3d92c689b
+60	310	8056476127549487	CMakeFiles/01ClassBaseUse.dir/src/01ClassBaseUse.cpp.obj.ddi	1a89ed64d75264f0
+312	372	8056476130070384	CMakeFiles/01ClassBaseUse.dir/CXX.dd	ccbb6298b75df422
+312	372	8056476130070384	CMakeFiles/01ClassBaseUse.dir/CXXModules.json	ccbb6298b75df422
+312	372	8056476130070384	CMakeFiles/01ClassBaseUse.dir/src/01ClassBaseUse.cpp.obj.modmap	ccbb6298b75df422
+373	1379	8056476130677534	CMakeFiles/01ClassBaseUse.dir/src/01ClassBaseUse.cpp.obj	ac4c6512981121f5
+1379	1588	8056476140738969	01ClassBaseUse.exe	5bd03279caec3b5f
+73	221	8056476811025447	build.ninja	a4bc76c83e92d7c3
+73	221	8056476811005449	D:/Programs/CPPLearn/out/build/x64-Debug/cmake_install.cmake	a4bc76c83e92d7c3

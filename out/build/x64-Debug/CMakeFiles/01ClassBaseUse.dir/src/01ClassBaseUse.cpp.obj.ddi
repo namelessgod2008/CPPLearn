@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "CMakeFiles\\01ClassBaseUse.dir\\src\\01ClassBaseUse.cpp.obj",
+            "outputs": [
+                "D:\\Programs\\CPPLearn\\out\\build\\x64-Debug\\vc140.pdb",
+                "CMakeFiles\\01ClassBaseUse.dir\\src\\01ClassBaseUse.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}
