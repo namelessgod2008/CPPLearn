@@ -30,7 +30,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4773cbb9-c56d-44c8-aeb4-d838a38f30ee" name="更改" comment="defineuse">
-      <change afterPath="$PROJECT_DIR$/src/04NumberStream.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/04NumberStream.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/04NumberStream.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +156,7 @@
       <workItem from="1783579284151" duration="11735000" />
       <workItem from="1783751465921" duration="26566000" />
       <workItem from="1784046596837" duration="5983000" />
-      <workItem from="1787126716990" duration="5925000" />
+      <workItem from="1787126716990" duration="7735000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
