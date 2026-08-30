@@ -1,74 +1,74 @@
 #include <iostream>
 
 // ====================================================================
-// ¡¾sizeof µÄÒªµã¡¿
-// 1. sizeof ÊÇ±àÒëÆÚÔËËã·û£¬²»ÊÇº¯Êý¡ª¡ª½á¹ûÔÚ±àÒëÊ±¾ÍÈ·¶¨ÁË¡£
-// 2. sizeof(±äÁ¿) »ò sizeof(ÀàÐÍ) ¶¼¿ÉÒÔ¡£
-// 3. sizeof(Ö¸Õë) ÓÀÔ¶ÊÇ 8£¨64Î»£©/ 4£¨32Î»£©£¬²»µÈÓÚ¶ÔÏó±¾ÉíµÄ´óÐ¡¡£
-// 4. ¿ÕÀà´óÐ¡Îª 1 ×Ö½Ú£¨C++ ±£Ö¤Ã¿¸ö¶ÔÏóÓÐÎ¨Ò»µØÖ·£¬×îÐ¡µ¥Î» 1£©¡£
-// 5. ? Í¬Ò»¸öÀàµÄËùÓÐ¶ÔÏó sizeof ÍêÈ«ÏàÍ¬¡ª¡ªÀà¶¨Òå¾ö¶¨ÁËÄÚ´æ²¼¾Ö£¬
-//    ÎÞÂÛÄãÓÃÄÄ¸ö¹¹Ôìº¯Êý´´½¨¶ÔÏó£¬ËùÓÐ³ÉÔ±×Ö¶Î¶¼´æÔÚ£¬´óÐ¡²»±ä¡£
+// ã€sizeof çš„è¦ç‚¹ã€‘
+// 1. sizeof æ˜¯ç¼–è¯‘æœŸè¿ç®—ç¬¦ï¼Œä¸æ˜¯å‡½æ•°â€”â€”ç»“æžœåœ¨ç¼–è¯‘æ—¶å°±ç¡®å®šäº†ã€‚
+// 2. sizeof(å˜é‡) æˆ– sizeof(ç±»åž‹) éƒ½å¯ä»¥ã€‚
+// 3. sizeof(æŒ‡é’ˆ) æ°¸è¿œæ˜¯ 8ï¼ˆ64ä½ï¼‰/ 4ï¼ˆ32ä½ï¼‰ï¼Œä¸ç­‰äºŽå¯¹è±¡æœ¬èº«çš„å¤§å°ã€‚
+// 4. ç©ºç±»å¤§å°ä¸º 1 å­—èŠ‚ï¼ˆC++ ä¿è¯æ¯ä¸ªå¯¹è±¡æœ‰å”¯ä¸€åœ°å€ï¼Œæœ€å°å•ä½ 1ï¼‰ã€‚
+// 5. åŒä¸€ä¸ªç±»çš„æ‰€æœ‰å¯¹è±¡ sizeof å®Œå…¨ç›¸åŒâ€”â€”ç±»å®šä¹‰å†³å®šäº†å†…å­˜å¸ƒå±€ï¼Œ
+//    æ— è®ºä½ ç”¨å“ªä¸ªæž„é€ å‡½æ•°åˆ›å»ºå¯¹è±¡ï¼Œæ‰€æœ‰æˆå‘˜å­—æ®µéƒ½å­˜åœ¨ï¼Œå¤§å°ä¸å˜ã€‚
 // ====================================================================
 
 class Base {
 private:
-    int         field1;   // 4 ×Ö½Ú
-    float       field2;   // 4 ×Ö½Ú
-    bool        field3;   // 1 ×Ö½Ú
-    long        field4;   // 4 »ò 8 ×Ö½Ú£¨È¡¾öÓÚÆ½Ì¨£©
-    long long   field5;   // 8 ×Ö½Ú
-    double      field6;   // 8 ×Ö½Ú
-    long double field7;   // 16 ×Ö½Ú£¨g++/MinGW ÏÂ£©
+    int         field1;   // 4 å­—èŠ‚
+    float       field2;   // 4 å­—èŠ‚
+    bool        field3;   // 1 å­—èŠ‚
+    long        field4;   // 4 æˆ– 8 å­—èŠ‚ï¼ˆå–å†³äºŽå¹³å°ï¼‰
+    long long   field5;   // 8 å­—èŠ‚
+    double      field6;   // 8 å­—èŠ‚
+    long double field7;   // 16 å­—èŠ‚ï¼ˆg++/MinGW ä¸‹ï¼‰
 
 public:
-    // ==================== ÖØÔØ¹¹Ôìº¯Êý ====================
-    // ¹¹Ôìº¯Êý¿ÉÒÔÖØÔØ¡ª¡ªÃû×ÖÏàÍ¬£¬²ÎÊý²»Í¬£¬±àÒëÆ÷¸ù¾ÝÊµ²ÎÀàÐÍ×Ô¶¯Æ¥Åä¡£
+    // ==================== é‡è½½æž„é€ å‡½æ•° ====================
+    // æž„é€ å‡½æ•°å¯ä»¥é‡è½½â€”â€”åå­—ç›¸åŒï¼Œå‚æ•°ä¸åŒï¼Œç¼–è¯‘å™¨æ ¹æ®å®žå‚ç±»åž‹è‡ªåŠ¨åŒ¹é…ã€‚
 
-    Base(int v) : field1(v) {            // µ¥²Î£ºint
-        std::cout << "Base(int)       ±»µ÷ÓÃ" << std::endl;
+    Base(int v) : field1(v) {            // å•å‚ï¼šint
+        std::cout << "Base(int)       è¢«è°ƒç”¨" << std::endl;
     }
-    Base(float v) : field2(v) {          // µ¥²Î£ºfloat£¨×¢Òâ£ºBase b = 1.0f »áµ÷ÓÃÕâ¸ö£©
-        std::cout << "Base(float)     ±»µ÷ÓÃ" << std::endl;
+    Base(float v) : field2(v) {          // å•å‚ï¼šfloatï¼ˆæ³¨æ„ï¼šBase b = 1.0f ä¼šè°ƒç”¨è¿™ä¸ªï¼‰
+        std::cout << "Base(float)     è¢«è°ƒç”¨" << std::endl;
     }
-    Base(bool v) : field3(v) {           // µ¥²Î£ºbool
-        std::cout << "Base(bool)      ±»µ÷ÓÃ" << std::endl;
+    Base(bool v) : field3(v) {           // å•å‚ï¼šbool
+        std::cout << "Base(bool)      è¢«è°ƒç”¨" << std::endl;
     }
-    Base(long v) : field4(v) {           // µ¥²Î£ºlong
-        std::cout << "Base(long)      ±»µ÷ÓÃ" << std::endl;
+    Base(long v) : field4(v) {           // å•å‚ï¼šlong
+        std::cout << "Base(long)      è¢«è°ƒç”¨" << std::endl;
     }
-    Base(long long v) : field5(v) {      // µ¥²Î£ºlong long
-        std::cout << "Base(long long) ±»µ÷ÓÃ" << std::endl;
+    Base(long long v) : field5(v) {      // å•å‚ï¼šlong long
+        std::cout << "Base(long long) è¢«è°ƒç”¨" << std::endl;
     }
-    Base(double v) : field6(v) {         // µ¥²Î£ºdouble
-        std::cout << "Base(double)    ±»µ÷ÓÃ" << std::endl;
+    Base(double v) : field6(v) {         // å•å‚ï¼šdouble
+        std::cout << "Base(double)    è¢«è°ƒç”¨" << std::endl;
     }
-    Base(long double v) : field7(v) {    // µ¥²Î£ºlong double
-        std::cout << "Base(long double)±»µ÷ÓÃ" << std::endl;
+    Base(long double v) : field7(v) {    // å•å‚ï¼šlong double
+        std::cout << "Base(long double)è¢«è°ƒç”¨" << std::endl;
     }
 
-    // Ô­ÓÐË«²Î¹¹Ôìº¯Êý
+    // åŽŸæœ‰åŒå‚æž„é€ å‡½æ•°
     Base(int f1, float f2) : field1(f1), field2(f2) {
-        std::cout << "Base(int,float) ±»µ÷ÓÃ" << std::endl;
+        std::cout << "Base(int,float) è¢«è°ƒç”¨" << std::endl;
     }
 
     ~Base() {}
 };
 
 int main() {
-    // ==================== »ù´¡ÀàÐÍ sizeof ====================
-    std::cout << "========== »ù´¡ÀàÐÍ sizeof ==========" << std::endl;
-    std::cout << "short:       " << sizeof(short)       << " ×Ö½Ú" << std::endl;
-    std::cout << "int:         " << sizeof(int)         << " ×Ö½Ú" << std::endl;
-    std::cout << "long:        " << sizeof(long)        << " ×Ö½Ú" << std::endl;
-    std::cout << "long long:   " << sizeof(long long)   << " ×Ö½Ú" << std::endl;
-    std::cout << "float:       " << sizeof(float)       << " ×Ö½Ú" << std::endl;
-    std::cout << "double:      " << sizeof(double)      << " ×Ö½Ú" << std::endl;
-    std::cout << "long double: " << sizeof(long double) << " ×Ö½Ú" << std::endl;
-    std::cout << "bool:        " << sizeof(bool)        << " ×Ö½Ú" << std::endl;
-    std::cout << "char:        " << sizeof(char)        << " ×Ö½Ú" << std::endl;
+    // ==================== åŸºç¡€ç±»åž‹ sizeof ====================
+    std::cout << "========== åŸºç¡€ç±»åž‹ sizeof ==========" << std::endl;
+    std::cout << "short:       " << sizeof(short)       << " å­—èŠ‚" << std::endl;
+    std::cout << "int:         " << sizeof(int)         << " å­—èŠ‚" << std::endl;
+    std::cout << "long:        " << sizeof(long)        << " å­—èŠ‚" << std::endl;
+    std::cout << "long long:   " << sizeof(long long)   << " å­—èŠ‚" << std::endl;
+    std::cout << "float:       " << sizeof(float)       << " å­—èŠ‚" << std::endl;
+    std::cout << "double:      " << sizeof(double)      << " å­—èŠ‚" << std::endl;
+    std::cout << "long double: " << sizeof(long double) << " å­—èŠ‚" << std::endl;
+    std::cout << "bool:        " << sizeof(bool)        << " å­—èŠ‚" << std::endl;
+    std::cout << "char:        " << sizeof(char)        << " å­—èŠ‚" << std::endl;
 
-    // ==================== Base ¶ÔÏó£¨Õ»ÉÏ´´½¨£©====================
-    std::cout << "\n========== ¹¹Ôì Base ¶ÔÏó ==========" << std::endl;
+    // ==================== Base å¯¹è±¡ï¼ˆæ ˆä¸Šåˆ›å»ºï¼‰====================
+    std::cout << "\n========== æž„é€  Base å¯¹è±¡ ==========" << std::endl;
 
     Base base1(42);                  // int
     Base base2(3.14f);               // float
@@ -78,23 +78,23 @@ int main() {
     Base base6(2.718);               // double
     Base base7(1.618L);              // long double
 
-    // ==================== Êä³ö sizeof ====================
-    std::cout << "\n========== Base ¶ÔÏó sizeof ==========" << std::endl;
-    std::cout << "base1 (int):         sizeof = " << sizeof(base1) << " ×Ö½Ú" << std::endl;
-    std::cout << "base2 (float):       sizeof = " << sizeof(base2) << " ×Ö½Ú" << std::endl;
-    std::cout << "base3 (bool):        sizeof = " << sizeof(base3) << " ×Ö½Ú" << std::endl;
-    std::cout << "base4 (long):        sizeof = " << sizeof(base4) << " ×Ö½Ú" << std::endl;
-    std::cout << "base5 (long long):   sizeof = " << sizeof(base5) << " ×Ö½Ú" << std::endl;
-    std::cout << "base6 (double):      sizeof = " << sizeof(base6) << " ×Ö½Ú" << std::endl;
-    std::cout << "base7 (long double): sizeof = " << sizeof(base7) << " ×Ö½Ú" << std::endl;
+    // ==================== è¾“å‡º sizeof ====================
+    std::cout << "\n========== Base å¯¹è±¡ sizeof ==========" << std::endl;
+    std::cout << "base1 (int):         sizeof = " << sizeof(base1) << " å­—èŠ‚" << std::endl;
+    std::cout << "base2 (float):       sizeof = " << sizeof(base2) << " å­—èŠ‚" << std::endl;
+    std::cout << "base3 (bool):        sizeof = " << sizeof(base3) << " å­—èŠ‚" << std::endl;
+    std::cout << "base4 (long):        sizeof = " << sizeof(base4) << " å­—èŠ‚" << std::endl;
+    std::cout << "base5 (long long):   sizeof = " << sizeof(base5) << " å­—èŠ‚" << std::endl;
+    std::cout << "base6 (double):      sizeof = " << sizeof(base6) << " å­—èŠ‚" << std::endl;
+    std::cout << "base7 (long double): sizeof = " << sizeof(base7) << " å­—èŠ‚" << std::endl;
 
-    // ¹Ø¼ü½áÂÛ£ºÈ«²¿ÏàµÈ£¡
-    // Ô­Òò£ºsizeof Ö»¿´"Àà¶¨ÒåÖÐÉùÃ÷ÁËÄÄÐ©×Ö¶Î"£¬²»¿´"ÓÃÁËÄÄ¸ö¹¹Ôìº¯Êý"¡£
-    //      ËùÓÐ Base ¶ÔÏóº¬Í¬Ñù 7 ¸ö×Ö¶Î ¡ú ´óÐ¡ºãÎª 48 ×Ö½Ú£¨º¬ÄÚ´æ¶ÔÆëÌî³ä£©¡£
+    // å…³é”®ç»“è®ºï¼šå…¨éƒ¨ç›¸ç­‰ï¼
+    // åŽŸå› ï¼šsizeof åªçœ‹"ç±»å®šä¹‰ä¸­å£°æ˜Žäº†å“ªäº›å­—æ®µ"ï¼Œä¸çœ‹"ç”¨äº†å“ªä¸ªæž„é€ å‡½æ•°"ã€‚
+    // æ‰€æœ‰ Base å¯¹è±¡å«åŒæ · 7 ä¸ªå­—æ®µ â†’ å¤§å°æ’ä¸º 48 å­—èŠ‚ï¼ˆå«å†…å­˜å¯¹é½å¡«å……ï¼‰ã€‚
 
-    std::cout << "\n========== ÀàÐÍ¼¶±ð sizeof ==========" << std::endl;
+    std::cout << "\n========== ç±»åž‹çº§åˆ« sizeof ==========" << std::endl;
     std::cout << "sizeof(Base) = " << sizeof(Base)
-              << " ×Ö½Ú  ¡û ÓëËùÓÐ base1~base7 ÏàÍ¬" << std::endl;
+              << " å­—èŠ‚  â† ä¸Žæ‰€æœ‰ base1~base7 ç›¸åŒ" << std::endl;
 
     return 0;
 }
