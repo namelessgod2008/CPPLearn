@@ -189,7 +189,7 @@ public:
     //       于是把新节点插到"最后一个节点前面"——不是追加到末尾！
     //       例：{10,20,30,40}  insertbefore(99, 100) → {10,20,30,99,40}
     // ====================================================================
-    void insertbefore (int data, unsigned int indexbias) {
+    void insertBefore (int data, unsigned int indexbias) {
         Node* newNode = new Node (data);
         if (isEmpty()) {                // 空表：唯一节点
             head = newNode;
@@ -257,6 +257,45 @@ public:
             }
         } while (indexbias > 0);
         return current->data;
+    }
+
+    void deleteIndexBias (unsigned int indexbias) {
+        if (isEmpty()) {
+            return;
+        }
+        Node* current = head;
+        if (getNodeCount() == 1) {
+            delete head;
+            head = nullptr;
+            tail = nullptr;
+            return;
+        }
+        while (indexbias > 0) {
+            current = current->next;
+            indexbias--;
+            if (current->next == nullptr) {
+                break;
+            }
+        }
+        Node* cachedcurrentprev = current->prev;
+        Node* cachedcurrentnext = current->next;
+        if (cachedcurrentnext == nullptr) {
+            delete tail;
+            tail = cachedcurrentprev;
+            tail->next = nullptr;
+            return;
+        }
+        if (cachedcurrentprev == nullptr) {
+            delete head;
+            head = cachedcurrentnext;
+            head->prev = nullptr;
+            return;
+        }
+        Node* currentprev = current->prev;
+        Node* currentnext = current->next;
+        delete current;
+        currentprev->next = currentnext;
+        currentnext->prev = currentprev;
     }
 };
 
