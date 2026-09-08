@@ -12,11 +12,11 @@
 //       （新节点刚创建时"两头空空"，谁都不连）
 // ========================================================================
 struct Node {
-    Node* prev;
-    Node* next;
+    Node *prev;
+    Node *next;
     int data;
 
-    Node ( int data ) : prev(nullptr), next(nullptr), data(data) {}
+    Node(int data) : prev(nullptr), next(nullptr), data(data) {}
 };
 
 // ========================================================================
