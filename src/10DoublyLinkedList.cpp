@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 //普通双向链表
 // ========================================================================
@@ -297,6 +298,21 @@ public:
         currentprev->next = currentnext;
         currentnext->prev = currentprev;
     }
+
+    void reverse () {
+        if (isEmpty()) {
+            return;
+        }
+        if (getNodeCount() == 1) {
+            return;
+        }
+        Node* current = head;
+        while (current->next != nullptr) {
+            std::swap(current->prev, current->next);
+            current = current->prev;
+        }
+        std::swap(head,tail);
+    }
 };
 
 // ========================================================================
@@ -321,5 +337,19 @@ int main () {
     std::cout << list->getData(1000) << std::endl;   // 越界 → 返回末尾值
 
     delete list;
+
+
+
+    auto* list2 = new DoublyLinkedList();
+    list2->addAtHead(10);
+    list2->addAtTail(20);
+    list2->addAtTail(30);
+    list2->addAtTail(40);
+    list2->reverse();
+
+    std::cout << list2->getData(3) << std::endl;
+
+    delete list2;
+
     return 0;
 }
