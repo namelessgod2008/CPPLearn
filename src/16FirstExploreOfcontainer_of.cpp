@@ -39,5 +39,6 @@ public:
 
 int main () {
     auto* list = new InstructiveDoublyLinkedList();
+    delete list;
     return 0;
 }
