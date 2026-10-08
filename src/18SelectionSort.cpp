@@ -16,6 +16,7 @@ void selectionSort(std::array<int,8>& arr) {
 
 int main() {
     std::array arr = {60,71,49,11,82,24,3,66};
+    std::cout << "vec created" << std::endl;
     selectionSort(arr);
     for (int & it : arr) {
         std::cout << it << std::endl;
