@@ -37,4 +37,8 @@ int main () {
     for (const int& i : arr) {
         std::cout << i << std::endl;
     };
+    quicksort(arr, 0, static_cast<int>(arr.size()) - 1);
+    for (const int& i : arr) {
+        std::cout << i << std::endl;
+    }
 };
