@@ -7,7 +7,11 @@ private:
     int* data;
 
 private:
-    ArrayStack(int size): size(size),count(0),data(new int[size]) {};
+    ArrayStack(int size):
+    size(size),
+    count(0),
+    data(new int[size])
+    {};
 
 public:
     static ArrayStack* of(int size) {
@@ -90,7 +94,7 @@ public:
 
     int pop() {
         if (isEmpty()) {
-            return 0;
+            return -1;
         }
         int temp = data[count - 1];
         data[count - 1] = 0;
