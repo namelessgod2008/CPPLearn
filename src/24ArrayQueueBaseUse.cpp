@@ -1,4 +1,5 @@
-#include<iostream>
+#include <algorithm>
+#include <iostream>
 
 class ArrayQueue {
 private:
@@ -14,7 +15,7 @@ private:
     size(size),
     count(0),
     data(new int[size]),
-    firstElement(nullptr),
+    firstElement(&data[0]),
     firstArraySlot(&data[0]),
     lastArraySlot(&data[size - 1])
     {};
@@ -53,22 +54,22 @@ public:
         delete[] data;
     }
 
-    int getSize() {
+    [[nodiscard]] int getSize() const {
         return size;
     }
 
-    int getCount() {
+    [[nodiscard]] int getCount() const {
         return count;
     }
 
-    bool isEmpty() const {
+    [[nodiscard]] bool isEmpty() const {
         if (count == 0) {
             return true;
         }
         return false;
     }
 
-    bool isFull() {
+    [[nodiscard]] bool isFull() const {
         if (count == size) {
             return true;
         }
@@ -123,7 +124,7 @@ public:
             expand();
         }
         int* writePosition = firstElement + count;
-        if (writePosition > data + size) {
+        if (writePosition >= data + size) {
             writePosition -= size;
         }
         *writePosition = var;
@@ -132,5 +133,21 @@ public:
 };
 
 int main() {
-
+    auto* queue = ArrayQueue::of(10);
+    queue->push(10);
+    queue->push(11);
+    queue->push(12);
+    queue->push(13);
+    queue->push(14);
+    int cnt = queue->getCount();
+    auto* arr = new int[cnt];
+    for (int i = 0; i < cnt; i++) {
+        arr[i] = queue->pop();
+    }
+    for (int i = 0; i < cnt; i++) {
+        std::cout << arr[i] << std::endl;
+    }
+    delete[] arr;
+    delete queue;
+    return 0;
 }
