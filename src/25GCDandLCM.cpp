@@ -12,7 +12,7 @@ int lcm(int a, int b) {
 int main() {
     int a = 28;
     int b = 35;
-    printf("%d%d",gcd(a,b),lcm(a,b));
+    printf("%s%d%s%d","GCD",gcd(a,b),"LCM",lcm(a,b));
     return 0;
 }
 
